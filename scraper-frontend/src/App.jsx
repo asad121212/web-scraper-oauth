@@ -23,7 +23,7 @@ function App() {
     setData(null);
 
     try {
-      const response = await axios.post("http://127.0.0.1:5000/scrape", { url, token });
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/scrape`, { url, token });
       setData(response.data);
     } catch (error) {
       setErrorMessage("Error scraping the site. Please try again.");
