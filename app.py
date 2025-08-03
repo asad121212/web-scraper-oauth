@@ -8,7 +8,7 @@ import urllib.robotparser
 # Initialize Flask app
 app = Flask(__name__)
 # Enable Cross-Origin Resource Sharing (CORS) to allow requests from React frontend
-CORS(app)
+CORS(app,origins=["*"])
 
 # --- Verify Google token ---
 def verify_google_token(token):
