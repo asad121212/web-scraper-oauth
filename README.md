@@ -35,9 +35,7 @@ Backend: Flask 3.1, Flask-CORS, Requests, BeautifulSoup4
 Styling: Pure CSS (responsive design)
 
 Project Structure
-bash
-Copy
-Edit
+
 project-root/
 │
 ├── frontend/
@@ -57,15 +55,11 @@ project-root/
     
 Setup Instructions
 1. Clone the Repository
-bash
-Copy
-Edit
+
 git clone <your-repo-link>
 cd project-root
 2. Backend Setup (Flask)
-bash
-Copy
-Edit
+
 cd backend
 python -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
@@ -74,28 +68,20 @@ python app.py
 Backend runs at: http://127.0.0.1:5000
 
 3. Frontend Setup (React + Vite)
-bash
-Copy
-Edit
+
 cd frontend
 npm install
 Create a .env file:
-ini
-Copy
-Edit
+
 VITE_GOOGLE_CLIENT_ID=your-google-client-id
 Ensure main.jsx uses the environment variable:
-javascript
-Copy
-Edit
+
 <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
   <App />
 </GoogleOAuthProvider>
 Run the frontend:
 
-bash
-Copy
-Edit
+
 npm run dev
 Frontend runs at: http://localhost:5173
 
