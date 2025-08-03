@@ -1,0 +1,262 @@
+/* === Global Styles and Background === */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #000000, #222222, #444444, #666666);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: auto;  /* Allow vertical scroll */
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* === Large Foreground Text (Above the Card) === */
+.foreground-text {
+  position: relative;
+  margin-bottom: 40px; /* Space between text and card */
+  font-size: 6rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.1);
+  letter-spacing: 20px;
+  text-shadow:
+     0 0 10px rgba(255, 255, 255, 0.2),
+    0 0 20px rgba(173, 216, 230, 0.15);
+  pointer-events: none;
+}
+
+/* === Main App Container === */
+.app-container {
+  display: flex;
+  flex-direction: column; /* Stack text and card */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+/* === Card (Main Box) === */
+.card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  width: 100%;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* === Logout Button Container === */
+.logout-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logout-button {
+  background-color: #ff4b5c;
+  color: white;
+  padding: 6px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-button:hover {
+  background-color: #e63946;
+  transform: scale(1.05);
+}
+
+/* === Heading Styling === */
+.heading {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* === Status Text === */
+.status-text {
+  color: green;
+  font-weight: 500;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* === Google Login Button Container === */
+.login-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* === Scraper Form === */
+.scrape-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.scrape-input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px 0 0 8px;
+  transition: border-color 0.3s ease;
+}
+
+.scrape-input:focus {
+  border-color: #6c63ff;
+  outline: none;
+}
+
+.scrape-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.scrape-button:hover {
+  background-color: #574bff;
+  transform: scale(1.05);
+}
+
+/* === Loading Spinner === */
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+
+.spinner-circle {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(108, 99, 255, 0.2);
+  border-top-color: #6c63ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* === Data Display Card === */
+.data-card {
+  background-color: #fdfdff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.data-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #6c63ff;
+}
+
+.data-card p {
+  margin: 4px 0;
+}
+
+/* === Error Message Styling === */
+.error-message {
+  color: #ff4b5c;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .foreground-text {
+    font-size: 4rem;
+    letter-spacing: 10px;
+    margin-bottom: 30px;
+  }
+  .card {
+    padding: 20px;
+    max-width: 90%;
+  }
+  .heading {
+    font-size: 1.7rem;
+  }
+  .scrape-input, .scrape-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .spinner-circle {
+    width: 35px;
+    height: 35px;
+    border-width: 3.5px;
+  }
+  .data-card p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .foreground-text {
+    font-size: 3rem;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+  }
+  .card {
+    padding: 15px;
+    max-width: 100%;
+  }
+  .heading {
+    font-size: 1.5rem;
+  }
+  .scrape-form {
+    flex-direction: column;
+  }
+  .scrape-input {
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  .scrape-button {
+    border-radius: 8px;
+    width: 100%;
+  }
+  .logout-button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  .spinner-circle {
+    width: 30px;
+    height: 30px;
+    border-width: 3px;
+  }
+  .data-card p {
+    font-size: 13px;
+  }
+}
